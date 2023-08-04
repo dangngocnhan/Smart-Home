@@ -1,0 +1,5 @@
+ÀÄNgat_PortB
+   ÃÄMAIN  0/25  Ram=0
+   ³  ÃÄ@cinit1  (Inline)  Ram=0
+   ³  ÀÄ@cinit2  (Inline)  Ram=0
+   ÀÄportb_interrupt  0/35  Ram=1

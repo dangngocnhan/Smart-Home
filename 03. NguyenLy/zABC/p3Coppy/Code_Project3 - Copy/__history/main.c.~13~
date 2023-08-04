@@ -1,0 +1,132 @@
+#include <main.h>
+
+#use i2c(Master,Fast=1000000, sda=PIN_C4, scl=PIN_C3,force_sw)
+#include "i2c_Flex_LCD.c"
+//!#include "DHT11.c"
+
+//!int chan = 0;
+//!int le = 1;
+//!void main()
+//!{
+//!   lcd_init(0x4E,16,2);
+//!   lcd_backlight_led(ON);
+//!   lcd_init(0x40,16,2);
+//!   lcd_backlight_led(ON);
+
+//!   while(TRUE)
+//!   {
+//!      lcd_init(0x4E,16,2);
+//!      lcd_gotoxy(1, 1);
+//!      printf(lcd_putc, "MINH KHOA");
+//!      lcd_gotoxy(1, 2);
+//!      printf(lcd_putc, "%d", chan);
+//!      
+//!      lcd_init(0x40,16,2);
+//!      lcd_gotoxy(1, 1);
+//!      printf(lcd_putc, "NGUYEN MINH KHOA");
+//!      lcd_gotoxy(1, 2);
+//!      printf(lcd_putc, "%d", le);
+//!      
+//!      chan += 2;
+//!      le += 2;
+//!      delay_ms(1000);
+//!   }
+
+//!}
+
+
+#define  Data_Pin       Pin_D4                      // ket noi voi chan RD0
+#define  Data_Pin_TRIS  SET_TRIS_D                // dieu khien chan data la output hay input 
+
+int8 Data_DHT11[5];
+
+int1 DHT11_Start(){    // start
+   Data_Pin_TRIS(0x00);   // MCU output
+   Output_low(Data_Pin);        // MCU keo chan data xuong muc thap >18 ms
+   delay_ms(25);
+   Output_high(Data_Pin);        // MCU keo chan data len muc cao 
+   Data_Pin_TRIS(0xff);   // MCU input doi tin hieu tra ve cua DHT11 khoang 20 - 40 us
+   delay_us(40);
+   if(input(Data_Pin) == 0){    //DHT11 keo chan data xuong thap 80 us sau do keo len cao 80 us --> xac nhan ket noi
+      delay_us(80);
+      if(input(Data_Pin) == 1){
+         delay_us(80);
+         return 1;         // xac nhan ket noi thanh cong
+      }
+   }
+}
+ 
+
+int1 ReadData_DHT11(){       // doc data cua DHT11 tra ve
+    for(int i = 0; i < 5; i++){        // data: 5 byte
+      for(int j = 0; j < 8; j++){      // 1 byte 8 bit   tong 40 bit
+         // data
+         while(input(Data_Pin) == 0){};      // chay het 50us muc thap
+         delay_us(30);              //  hon 26-28us van la muc cao --> DHT11 chuyen di muc 1
+         if(input(Data_Pin) == 1){  
+               Data_DHT11[i] = Data_DHT11[i]<<1 | 1;
+               while(input(Data_Pin) == 1){} // chay het 70us muc cao
+         }
+         else{                   // tra ve bit 0
+            Data_DHT11[i] = Data_DHT11[i]<<1 | 0;
+         }
+      }   
+    }
+    // ------- kiem tra byte 5 = sum(byte 1 + 2 + 3 + 4) --> chuyen data thanh cong. nguoc lai 
+    if(Data_DHT11[4] == (Data_DHT11[0] + Data_DHT11[1] + Data_DHT11[2] + Data_DHT11[3])){
+      return 1;
+    }
+}
+
+void HienThi_Data_DHT11(){
+    //------------------in ket qua-----------------------------------------------
+    //in nhiet do
+    LCD_putc('\f');
+    LCD_putc("Nhiet do = ");
+    for(int i = 13; i > 11; i--){
+       LCD_Gotoxy(i,1);       //hien thi hang don vi truoc >hang chuc
+       lcd_putc(Data_DHT11[2] % 10 + 48);  //doi ra so thap phan +48
+       Data_DHT11[2]=Data_DHT11[2] / 10;
+    }
+    //in do am
+    LCD_Gotoxy(1,2); 
+    LCD_putc("Do am = ");
+    for(int i = 13; i > 11; i--){ 
+       LCD_Gotoxy(i,2);                                 //hien thi hang don vi truoc >hang chuc  
+       lcd_putc(Data_DHT11[0] % 10 + 48);                         //doi ra so thap phan +48
+       Data_DHT11[0]=Data_DHT11[0] / 10;
+    }
+      //hien thi don vi nhiet do va do am 
+    LCD_Gotoxy(14,1);   
+    LCD_putc(223);
+    LCD_putc('C');
+    LCD_Gotoxy(14,2);   
+    LCD_putc('%');
+}
+
+void main() { 
+   set_tris_c(0x00);
+   set_tris_d(0x00);                                //khai bao PORTD la ngo ra
+   
+   lcd_init(0x4E,16,2);
+   lcd_backlight_led(ON);
+   lcd_init(0x40,16,2);
+   lcd_backlight_led(ON);                              //khoi tao LCD      
+   
+   while(true){
+       delay_ms(500);
+       if(DHT11_Start()!=1){                      // start giao tiep DHT11 
+           lcd_putc('\f');
+           lcd_putc("Khong Muon Chuyen");
+           delay_ms(1000);
+       }              
+       if(ReadData_DHT11()!=1){                        //doc du lieu 
+           lcd_putc('\f');
+           lcd_putc("Truyen Lom Com");
+           delay_ms(1000);
+       }
+       else 
+         HienThi_Data_DHT11();        //hien thi ket qua   
+       }
+} 
+

@@ -1,0 +1,4 @@
+Compiling C:\Users\DangNgocNhan\Desktop\P3\Code\i2c_Flex_LCD on 30-Oct-22 at 21:21
+*** Error 128 "C:\Users\DangNgocNhan\Desktop\P3\Code\i2c_Flex_LCD.c" Line 12(1,5): A #DEVICE required before this line
+      1 Errors,  0 Warnings.
+Build Failed.

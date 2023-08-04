@@ -1,0 +1,122 @@
+
+#include <16f877a.h>
+#include <def_877a.h>
+
+#FUSES HS
+#FUSES NOWDT
+#FUSES NOBROWNOUT
+#FUSES NOLVP
+#device *=16 adc=8
+#use delay (crystal=20M) 
+//!#use delay (clock=20M) 
+
+#define LCD_RS_PIN      PIN_E0
+#define LCD_RW_PIN      PIN_E1
+#define LCD_ENABLE_PIN  PIN_E2   
+#define LCD_DATA4       PIN_C3
+#define LCD_DATA5       PIN_C4
+#define LCD_DATA6       PIN_C5
+#define LCD_DATA7       PIN_D7
+
+#include <lcd.c>
+
+//!#use i2c(Master,Fast=1000000, sda=PIN_C4, scl=PIN_C3,force_sw)
+//!#include "i2c_Flex_LCD.c"
+#include "DHT11.c"
+unsigned int8 kqUart;
+unsigned int8 dh_nhiet_do,dh_nhiet_do2,dh_do_am,dh_do_am2;   //cac bien luu tru nhiet do do am
+unsigned int8 str[20];
+int8 soNguoi = 0;
+int8 NhietDoDk_Bat = 25;
+int8 NhietDoDk_Tat = 20;
+int start_stop_b = 0;
+int1 baodong_b = 0, checkDenKhach = 1, checkQuatKhach = 1;
+
+
+
+void check_Den_Khach(){
+   if(soNguoi > 0 && checkDenKhach){
+      output_high(Pin_D0);
+      //lcd; gui data
+//!      putc('1');
+   }
+   else {
+      output_low(Pin_D0);
+      //lcd; gui data
+//!      putc('2');
+   }
+}
+#int_ext // giup vao ngat
+void Ngat_int_ext()
+{
+    CLEAR_INTERRUPT(int_ext);
+    if(input_state(Pin_B1)==0){
+      disable_interrupts(int_ext); 
+      while(input_state(Pin_B2));
+      soNguoi++;
+      //lcd gui data
+//!      putc(soNguoi);
+    }else{
+      if(input_state(Pin_B2)==0){
+         disable_interrupts(int_ext);
+         while(input_state(Pin_B1));
+         if(soNguoi <= 1) soNguoi = 0;
+         else{
+            soNguoi--;
+            //lcd gui data
+//!            putc(soNguoi);
+         }
+      }
+   }
+   enable_interrupts(int_ext);
+}
+
+void main() { 
+   //khai bao bien cuc bo o day
+//!   unsigned int8 dh_nhiet_do,dh_nhiet_do2,dh_do_am,dh_do_am2;
+//!   unsigned int8 str[20];
+   
+//!   lcd_init(0x40,16,2);
+//!   lcd_backlight_led(ON); 
+   trisD0=0;
+   trisD1=0;
+   output_high(Pin_D0);
+   output_high(Pin_D1);
+   
+   lcd_init();
+   lcd_putc('\f'); 
+   lcd_gotoxy(1,1); 
+   printf(lcd_putc,"READING DHT11");
+   lcd_gotoxy(1,2); 
+   printf(lcd_putc,"READING DHT112");
+   
+     CLEAR_INTERRUPT(int_ext);
+  enable_interrupts(int_ext); // cho phep ngat ngoai
+  ext_int_edge(h_to_l) ; //chon canh kich ngat la tu cao xuong thap
+  enable_interrupts (global);
+   delay_ms(500); 
+//!   delay_ms(500); 
+//!   lcd_putc('\f');
+//!   
+   while(TRUE) {
+//!      lcd_gotoxy(1,1); 
+//!      printf(lcd_putc,"READING DHT11");
+//!      lcd_gotoxy(1,2); 
+//!      printf(lcd_putc,"READING DHT11");
+//!   //TO00: User Code 
+//!      if (DHT_GetTemHumi(dh_nhiet_do,dh_nhiet_do2,dh_do_am,dh_do_am2))
+//!      { 
+//!         sprintf(str,"DO Am: %u,%u",dh_do_am,dh_do_am2);
+//!         lcd_gotoxy(1,1); 
+//!         printf(lcd_putc,"%s",str); 
+//!         lcd_putc('%'); 
+//!         sprintf(str,"NHIET D0: %u,%u",dh_nhiet_do,dh_nhiet_do2);
+//!         lcd_gotoxy(1,2); 
+//!         printf(lcd_putc,"%s",str); 
+//!         lcd_putc(223); 
+//!         lcd_putc('C'); 
+//!      }
+    check_Den_Khach();
+   }
+  
+} 

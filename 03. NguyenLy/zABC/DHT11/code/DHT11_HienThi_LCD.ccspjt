@@ -1,0 +1,23 @@
+[PROJECT]
+Target=DHT11_HienThi_LCD.hex
+Processor_Text=PIC16F877A
+CCSVersion=5.101
+Compiler=PCM
+[Target Data]
+FileList=DHT11_HienThi_LCD.c
+[DHT11_HienThi_LCD.c]
+Type=4
+[mru-list]
+1=DHT11_HienThi_LCD.c
+[Units]
+Count=1
+1=DHT11_HienThi_LCD (main)
+
+[defines]
+buildcount=1
+
+[ProjectLog]
+Days=1
+D1=10-11-2022
+D1_L=1
+D1_L1=[78913]Project Closed.

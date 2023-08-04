@@ -1,0 +1,39 @@
+#include <main.h>
+//!
+#use i2c(Master,Fast=400KHz, sda=PIN_C4, scl=PIN_C3,force_sw)
+#include "i2c_Flex_LCD.c"
+#include "DHT11.c"
+//!
+int chan = 0;
+int le = 1;
+void main()
+{
+   lcd_init(0x4E,16,2);
+   lcd_backlight_led(ON);
+   lcd_init(0x40,16,2);
+   lcd_backlight_led(ON);
+
+   while(TRUE)
+   {
+      lcd_init(0x4E,16,2);
+      lcd_gotoxy(1, 1);
+      printf(lcd_putc, "MINH KHOA");
+      lcd_gotoxy(1, 2);
+      printf(lcd_putc, "%d", chan);
+      
+      lcd_init(0x40,16,2);
+      lcd_gotoxy(1, 1);
+      printf(lcd_putc, "NGUYEN MINH KHOA");
+      lcd_gotoxy(1, 2);
+      printf(lcd_putc, "%d", le);
+      
+      chan += 2;
+      le += 2;
+      delay_ms(1000);
+   }
+}
+
+
+
+
+

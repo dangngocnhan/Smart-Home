@@ -1,0 +1,47 @@
+#include <16f877a.h>
+#include <def_877a.h>
+
+#use delay(clock=20000000)
+#use rs232(BAUD=9600,XMIT=PIN_C6,RCV=PIN_C7)
+
+
+#define button_On    RA0
+#define button_Off   RA1
+
+unsigned int8 kq;
+
+void main(){
+
+   enable_interrupts(INT_RDA);
+   enable_interrupts(GLOBAL);
+   set_tris_b(0);
+   TRISA = 0xFF; 
+   set_tris_b(0x00);
+   portB(0x00);
+   
+   
+   while(true)
+   {
+      if(button_On == 0){
+         putc('1');
+         while(button_On == 0);
+      }
+      if(button_Off == 0){
+         putc('2');
+         while(button_Off == 0);
+      }
+   }
+}
+
+#INT_RDA
+void uart_(){
+   kq = getc();
+   switch(kq){
+      case '1':
+         output_high(Pin_B0);
+         break;
+      case '2':
+         output_low(pin_B0);
+         break;
+   }
+}

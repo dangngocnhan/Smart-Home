@@ -1,0 +1,43 @@
+[PROJECT]
+Target=TestUartP3.hex
+Processor_Text=PIC16F877A
+CCSVersion=5.101
+Compiler=PCM
+[Target Data]
+FileList=TestUartP3.c
+[TestUartP3.c]
+Type=4
+[mru-list]
+1=TestUartP3.c
+
+[defines]
+buildcount=3
+
+[Opened Files]
+1=..\main.c
+t1=1
+2=..\main.h
+t2=17
+3=..\..\..\Vi_Dieu_Khien\Bai10. Truyen_Thong\UART_2Pic\code\uart.c
+t3=1
+4=..\..\..\Vi_Dieu_Khien\Bai10. Truyen_Thong\UART_2Pic\code_Nhan\uart_2.c
+t4=29
+5=TestUartP3.c
+t5=1
+Count=6
+6=..\..\..\..\..\..\Program Files (x86)\PICC\Devices\def_877a.h
+t6=9
+[Units]
+Count=1
+1=TestUartP3 (main)
+
+[ProjectLog]
+Days=1
+D1=14-11-2022
+D1_L=2
+D1_L1=[60088]Stopped Editing.
+TotalEdit=5
+TotalDebug=0
+D1_E=5
+D1_D=0
+D1_L2=[60088]Project Closed.

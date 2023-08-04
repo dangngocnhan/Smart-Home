@@ -1,0 +1,133 @@
+004-005 @READ_PROGRAM_MEMORY8.P1
+004-005 @WRITE_PROGRAM_MEMORY8.P2
+006.0   DHT_DATA_IN
+006.0   DHT_DATA_OUT
+008     PSP_DATA
+015     CCP_1_LOW
+015     CCP_1
+016     CCP_1_HIGH
+01B     CCP_2_LOW
+01B     CCP_2
+01C     CCP_2_HIGH
+020     @TRIS_C
+021-022 @sprintf_string
+023     MAIN.dh_nhiet_do
+024     MAIN.dh_nhiet_do2
+025     MAIN.dh_do_am
+026     MAIN.dh_do_am2
+027-03A MAIN.str
+03B     lcd_init.i
+03B     @PSTRINGCN7_768.P1
+03B     @PRINTF_U_768.P2
+03B     MAIN.@SCRATCH1
+03B     @PSTRINGC7_725.@SCRATCH1
+03B     @PSTRINGR_725.@SCRATCH1
+03C     @PRINTF_U_768.P1
+03C-03F lcd_init.LCD_INIT_STRING
+03C     @PSTRINGC7_725.@SCRATCH2
+03C     @PSTRINGCN7_768.@SCRATCH1
+03C     @PSTRINGR_725.@SCRATCH2
+03D     @DIV88.P1
+03D     @PSTRINGC7_725.@SCRATCH3
+03D     @PSTRINGCN7_768.@SCRATCH2
+03E-042 DHT_GetTemHumi.buffer
+03E     @DIV88.P1
+03E     lcd_putc.s
+03E     @PSTRINGC7_725.@SCRATCH4
+03E     @PSTRINGCN7_768.@SCRATCH3
+03F     lcd_gotoxy.x
+03F     @SPRINTF.P1
+03F     @PSTRINGCN7_768.@SCRATCH4
+03F     @DIV88.@SCRATCH1
+040     lcd_gotoxy.y
+040     @delay_ms1.P1
+040     lcd_init.@SCRATCH1
+041     lcd_gotoxy.address
+042     lcd_gotoxy.@SCRATCH1
+043     lcd_send_byte.address
+043     DHT_GetTemHumi.ii
+044     DHT_GetTemHumi.i
+044     lcd_send_byte.n
+045     DHT_GetTemHumi.checksum
+045     lcd_read_byte.low
+045     lcd_send_byte.@SCRATCH1
+046     lcd_send_nibble.n
+046     lcd_read_byte.high
+046     DHT_GetTemHumi.@SCRATCH1
+047     lcd_read_nibble.n
+047     lcd_read_byte.@SCRATCH1
+047     DHT_GetTemHumi.@SCRATCH2
+048     lcd_read_nibble.@SCRATCH1
+048     DHT_GetTemHumi.@SCRATCH3
+04E     @delay_ms2.P1
+077     @SCRATCH
+078     @SCRATCH
+078     _RETURN_
+079     @SCRATCH
+07A     @SCRATCH
+086.0   DHT_DDR_DATA
+09C.6   C1OUT
+09C.7   C2OUT
+10D-10E @READ_PROGRAM_MEMORY8.P1
+10D-10E @WRITE_PROGRAM_MEMORY8.P2
+
+ROM Allocation:
+000004  @const767.call
+00000B  @const772.call
+000012  @const783.call
+00001A  @delay_ms1
+00002E  lcd_send_nibble
+000068  lcd_read_nibble
+0000A1  lcd_send_byte
+0000B5  lcd_read_byte
+00012B  lcd_init
+000193  lcd_gotoxy
+0001A5  lcd_putc
+0001C9  @PSTRINGC7_725
+000221  @delay_ms2
+000235  @SPRINTF
+000242  @PSTRINGCN7_768
+000299  @DIV88
+0002AE  @PRINTF_U_768
+0002E3  @PSTRINGR_725
+0002F9  @cinit1
+0002F9  MAIN
+000307  @cinit2
+000329  DHT_GetTemHumi
+
+Project Directory:
+    C:\Users\DangNgocNhan\Desktop\P3\ZABC\do nhiet do do am su dung DHT11\code\
+
+Project Files:
+    DHT11_HienThi_LCD.c                                     [10-Nov-22 21:51  CRC=2172BD93]
+    ..\..\..\..\..\..\..\Program Files (x86)\PICC\Devices\16f877a.h [22-Jan-21 01:32  CRC=DB498A92]
+    ..\..\..\..\..\..\..\Program Files (x86)\PICC\Drivers\lcd.c [07-Apr-22 11:41  CRC=CF6EBE94]
+    DHT11.c                                                 [10-Nov-22 21:50  CRC=DD422165]
+
+Source signature=86AF4983
+Program memory checksum=0000
+Hex file CRC=0F46
+
+Units:
+    C:\Users\DangNgocNhan\Desktop\P3\ZABC\do nhiet do do am su dung DHT11\code\DHT11_HienThi_LCD (main)
+
+Compiler Settings:
+    Processor:      PIC16F877A
+    Pointer Size:   16
+    ADC Range:      0-255
+    Opt Level:      9
+    Short,Int,Long: UNSIGNED: 1,8,16
+    Float,Double:   32,32
+    Compile Mode:   CCS5
+
+Output Files:
+    XREF file:   DHT11_HienThi_LCD.xsym
+    Errors:      DHT11_HienThi_LCD.err
+    Ext Symbols: DHT11_HienThi_LCD.esym
+    INHX8:       DHT11_HienThi_LCD.hex
+    Symbols:     DHT11_HienThi_LCD.sym
+    List:        DHT11_HienThi_LCD.lst
+    Debug/COFF:  DHT11_HienThi_LCD.cof
+    Project:     DHT11_HienThi_LCD.ccspjt
+    Call Tree:   DHT11_HienThi_LCD.tre
+    Statistics:  DHT11_HienThi_LCD.STA

@@ -1,0 +1,144 @@
+004-005 @WRITE_PROGRAM_MEMORY8.P1
+004-005 @READ_PROGRAM_MEMORY8.P2
+006.0   DHT_DATA_IN
+006.0   DHT_DATA_OUT
+008     PSP_DATA
+015     CCP_1
+015     CCP_1_LOW
+016     CCP_1_HIGH
+01B     CCP_2_LOW
+01B     CCP_2
+01C     CCP_2_HIGH
+020     @TRIS_C
+021     LCD_ADDR
+022     lcd_total_rows
+023     lcd_total_columns
+024     new_row_request
+025     BACKLIGHT_LED
+026     lcd_gotoxy.data
+027-028 @sprintf_string
+029     MAIN.dh_nhiet_do
+02A     MAIN.dh_nhiet_do2
+02B     MAIN.dh_do_am
+02C     MAIN.dh_do_am2
+02D-040 MAIN.str
+041     @PRINTF_U_770.P1
+041     @PSTRINGCN7_770.P2
+041     lcd_backlight_led.bl
+041     lcd_init.addr
+041     MAIN.@SCRATCH1
+041     @PSTRINGC7_759.@SCRATCH1
+041     @PSTRINGR_759.@SCRATCH1
+042     lcd_init.col
+042     @PRINTF_U_770.P1
+042     @PSTRINGC7_759.@SCRATCH2
+042     @PSTRINGCN7_770.@SCRATCH1
+042     @PSTRINGR_759.@SCRATCH2
+043     lcd_init.row
+043     @DIV88.P1
+043     @PSTRINGC7_759.@SCRATCH3
+043     @PSTRINGCN7_770.@SCRATCH2
+044     lcd_init.i
+044-048 DHT_GetTemHumi.buffer
+044     @DIV88.P1
+044     LCD_PUTC.in_data
+044     @PSTRINGC7_759.@SCRATCH4
+044     @PSTRINGCN7_770.@SCRATCH3
+045     lcd_gotoxy.x
+045     @SPRINTF.P1
+045     lcd_init.@SCRATCH1
+045     @PSTRINGCN7_770.@SCRATCH4
+045     @DIV88.@SCRATCH1
+046     lcd_gotoxy.y
+047     lcd_gotoxy.row
+048     lcd_gotoxy.column
+049     DHT_GetTemHumi.ii
+049     lcd_gotoxy.row_addr
+04A     lcd_gotoxy.lcd_address
+04A     DHT_GetTemHumi.i
+04B     DHT_GetTemHumi.checksum
+04B     lcd_gotoxy.@SCRATCH1
+04C     lcd_send_byte.data
+04C     DHT_GetTemHumi.@SCRATCH1
+04D     lcd_send_byte.type
+04D     DHT_GetTemHumi.@SCRATCH2
+04E     DHT_GetTemHumi.@SCRATCH3
+04E     lcd_send_byte.@SCRATCH1
+04F     i2c_send_nibble.data
+050     i2c_send_nibble.type
+051     i2c_send_nibble.@SCRATCH1
+052     @I2C_WRITE_129.P1
+054     @delay_ms2.P1
+077     @SCRATCH
+078     @SCRATCH
+078     _RETURN_
+079     @SCRATCH
+07A     @SCRATCH
+086.0   DHT_DDR_DATA
+09C.6   C1OUT
+09C.7   C2OUT
+10D-10E @WRITE_PROGRAM_MEMORY8.P1
+10D-10E @READ_PROGRAM_MEMORY8.P2
+
+ROM Allocation:
+000004  LCD_INIT_STRING.call
+000008  LCD_INIT_STRING.data
+00000C  @const769.call
+000013  @const774.call
+00001A  @const785.call
+000022  @delay_ms2
+000036  @I2C_WRITE_129
+000092  i2c_send_nibble
+0000E2  lcd_send_byte
+000134  lcd_clear
+00013E  lcd_init
+0001BC  lcd_backlight_led
+0001C4  lcd_gotoxy
+0001FB  LCD_PUTC
+000220  @PSTRINGC7_759
+000278  @SPRINTF
+000285  @PSTRINGCN7_770
+0002DC  @DIV88
+0002F1  @PRINTF_U_770
+000326  @PSTRINGR_759
+00033C  MAIN
+00033C  @cinit1
+00034E  @cinit2
+00037D  DHT_GetTemHumi
+
+Project Directory:
+    C:\Users\DangNgocNhan\Desktop\P3\ZABC\DHT11 - LCD_I2C\code\
+
+Project Files:
+    DHT11_HienThi_LCD_I2C.c                                 [10-Nov-22 22:14  CRC=F1758761]
+    ..\..\..\..\..\..\..\Program Files (x86)\PICC\Devices\16f877a.h [22-Jan-21 01:32  CRC=DB498A92]
+    DHT11.c                                                 [10-Nov-22 21:50  CRC=DD422165]
+    i2c_Flex_LCD.c                                          [26-Apr-20 11:13  CRC=16AFB211]
+
+Source signature=D760977A
+Program memory checksum=0000
+Hex file CRC=B27C
+
+Units:
+    C:\Users\DangNgocNhan\Desktop\P3\ZABC\DHT11 - LCD_I2C\code\DHT11_HienThi_LCD_I2C (main)
+
+Compiler Settings:
+    Processor:      PIC16F877A
+    Pointer Size:   16
+    ADC Range:      0-255
+    Opt Level:      9
+    Short,Int,Long: UNSIGNED: 1,8,16
+    Float,Double:   32,32
+    Compile Mode:   CCS5
+
+Output Files:
+    XREF file:   DHT11_HienThi_LCD_I2C.xsym
+    Errors:      DHT11_HienThi_LCD_I2C.err
+    Ext Symbols: DHT11_HienThi_LCD_I2C.esym
+    INHX8:       DHT11_HienThi_LCD_I2C.hex
+    Symbols:     DHT11_HienThi_LCD_I2C.sym
+    List:        DHT11_HienThi_LCD_I2C.lst
+    Debug/COFF:  DHT11_HienThi_LCD_I2C.cof
+    Project:     DHT11_HienThi_LCD_I2C.ccspjt
+    Call Tree:   DHT11_HienThi_LCD_I2C.tre
+    Statistics:  DHT11_HienThi_LCD_I2C.STA

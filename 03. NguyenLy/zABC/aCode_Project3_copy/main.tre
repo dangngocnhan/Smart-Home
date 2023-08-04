@@ -1,0 +1,8 @@
+ÀÄmain
+   ÃÄMAIN  0/77  Ram=0
+   ³  ÃÄ@cinit1  (Inline)  Ram=0
+   ³  ÃÄ@cinit2  (Inline)  Ram=0
+   ³  ÀÄcheck_Den_Khach  0/19  Ram=0
+   ÃÄportb_interrupt  0/38  Ram=1
+   ÃÄNgat_int_ext  0/25  Ram=1
+   ÀÄNgat_Timer1  0/64  Ram=1

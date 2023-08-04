@@ -1,0 +1,108 @@
+[PROJECT]
+Target=LCD20X4.hex
+Processor_Text=PIC16F877A
+CCSVersion=5.101
+Compiler=PCM
+[Target Data]
+FileList=LCD20X4.c
+[LCD20X4.c]
+Type=4
+[mru-list]
+1=LCD20X4.c
+
+[defines]
+buildcount=45
+
+[ProjectLog]
+Days=6
+D1=15-11-2022
+D1_L=3
+D1_L1=[79934]Started Editing.
+D1_L2=[80651]Stopped Editing.
+TotalEdit=71
+TotalDebug=0
+D1_E=7
+D1_D=0
+D1_L3=[85507]Project Closed.
+D2=16-11-2022
+D2_L=4
+D2_L1=[27570]Project Opened.
+D2_L2=[27731]Started Editing.
+D2_L3=[27930]Stopped Editing.
+D2_E=4
+D2_D=0
+D2_L4=[27930]Project Closed.
+D3=17-11-2022
+D3_L=3
+D3_L1=[79950]Project Opened.
+D3_L2=[80030]Started Editing.
+D3_L3=[80652]Stopped Editing.
+D4=18-11-2022
+D4_E=11
+D4_D=0
+D4_L=12
+D4_L1=[915]Project Closed.
+D4_L2=[75357]Project Opened.
+D4_L3=[75390]Started Editing.
+D4_L4=[75690]Stopped Editing.
+D4_L5=[76777]Started Editing.
+D4_L6=[77189]Stopped Editing.
+D4_L7=[77333]Started Editing.
+D4_L8=[77654]Stopped Editing.
+D4_L9=[78308]Started Editing.
+D4_L10=[78730]Stopped Editing.
+D4_L11=[84667]Started Editing.
+D4_L12=[85032]Stopped Editing.
+D5=19-11-2022
+D5_L=30
+D5_L1=[1001]Started Editing.
+D5_L2=[1184]Stopped Editing.
+D5_E=49
+D5_D=0
+D5_L3=[2474]Started Editing.
+D5_L4=[2914]Stopped Editing.
+D5_L5=[5610]Started Editing.
+D5_L6=[6303]Stopped Editing.
+D5_L7=[6936]Project Closed.
+D5_L8=[39601]Project Opened.
+D5_L9=[39628]Started Editing.
+D5_L10=[39972]Stopped Editing.
+D5_L11=[39972]Project Closed.
+D5_L12=[40061]Project Opened.
+D5_L13=[40103]Started Editing.
+D5_L14=[40756]Stopped Editing.
+D5_L15=[41118]Started Editing.
+D5_L16=[41557]Stopped Editing.
+D5_L17=[41952]Started Editing.
+D5_L18=[42268]Stopped Editing.
+D5_L19=[43777]Started Editing.
+D5_L20=[44721]Stopped Editing.
+D5_L21=[45026]Started Editing.
+D5_L22=[45340]Stopped Editing.
+D5_L23=[45487]Started Editing.
+D5_L24=[45787]Stopped Editing.
+D5_L25=[46286]Started Editing.
+D5_L26=[46447]Stopped Editing.
+D5_L27=[46447]Project Closed.
+D5_L28=[66872]Project Opened.
+D5_L29=[66905]Started Editing.
+D5_L30=[67050]Project Closed.
+D6=23-11-2022
+D6_L=2
+D6_L1=[45596]Project Opened.
+D6_L2=[45625]Project Closed.
+
+[Opened Files]
+1=..\..\..\..\lcd2004.c
+t1=1
+2=..\..\..\..\lcd2004\lcd2004.c
+t2=1
+Count=2
+3=..\..\..\..\..\..\..\Program Files (x86)\PICC\Devices\def_877a.h
+t3=41
+
+[fileformats]
+forcecoff=0
+[Units]
+Count=1
+1=LCD20X4 (main)

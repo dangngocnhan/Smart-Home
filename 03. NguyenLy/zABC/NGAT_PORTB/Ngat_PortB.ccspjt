@@ -1,0 +1,23 @@
+[PROJECT]
+Target=Ngat_PortB.hex
+Processor_Text=PIC16F877A
+CCSVersion=5.101
+Compiler=PCM
+[Target Data]
+FileList=Ngat_PortB.c
+[Ngat_PortB.c]
+Type=4
+[mru-list]
+1=Ngat_PortB.c
+[Units]
+Count=1
+1=Ngat_PortB (main)
+
+[defines]
+buildcount=1
+
+[ProjectLog]
+Days=1
+D1=11-11-2022
+D1_L=1
+D1_L1=[50637]Project Closed.

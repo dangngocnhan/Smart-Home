@@ -1,0 +1,5 @@
+Compiling C:\Users\DangNgocNhan\Desktop\Project3\Code_Project3\uart\TestUartP3 on 14-Nov-22 at 16:41
+>>> Warning 238 "C:\Program Files (x86)\PICC\Devices\def_877a.h" Line 284(2,5): Duplicate #locate
+      Memory usage:   ROM=2%      RAM=4% - 4%
+      0 Errors,  1 Warnings.
+Build Successful.

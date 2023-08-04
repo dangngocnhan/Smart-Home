@@ -1,0 +1,87 @@
+<!DOCTYPE html> 
+<html>
+ <head> 
+     <title>HOME PAGE</title> 
+     <style> 
+        body {
+            text-align:center;
+            font-size: 20px; font-weight: 500; 
+            max-width: 500px;
+            height: inherit;
+            margin: auto; 
+        }
+        .all
+        *{
+            margin-top: 10px; 
+        }
+        h1 {color:#003399;}
+        a {text-decoration: none;color:#FFFFFF;}
+        .bt_on {height:45px; width:100px;background-color:#00FF00;border-radius:5px;}
+        .bt_off {height:45px; width:100px;background-color:#FF6600;border-radius:5px;}
+     </style>
+     <meta charset="UTF-8">
+ </head>
+ <body> 
+    <h1>ESP8266 Web Server</h1> 
+    <div>Số người trong phòng: <b><pan id="soNguoi"><pan></b></div>
+    <div>Trạng thái đèn phòng khách: <b><pan id="trangthaiD1"><pan></b></div>
+    <div>
+    <button class="bt_on" onclick="getdata('onD1')">ON</button>
+    <button class="bt_off" onclick="getdata('offD1')">OFF</button>
+    </div>
+    <div>Trạng thái trên chân D2: <b><pan id="trangthaiD2"><pan></b></div>
+    <div>
+    <button class="bt_on" onclick="getdata('onD2')">ON</button>
+    <button class="bt_off" onclick="getdata('offD2')">OFF</button>
+    </div>
+    <div id="reponsetext"></div>
+    <script>
+      //-----------Tạo đối tượng request----------------
+      function create_obj(){
+        td = navigator.appName;
+        if(td == "Microsoft Internet Explorer"){
+          obj = new ActiveXObject("Microsoft.XMLHTTP");
+        }else{
+          obj = new XMLHttpRequest();
+        }
+        return obj;
+      }
+      var xhttp = create_obj();
+      
+      //-----------Thiết lập dữ liệu và gửi request-------
+      function getdata(url){
+        xhttp.open("GET","/"+url,true); // Thiết lập dữ liệu phương thức get; đường dẫn url gửi lên sever
+        xhttp.onreadystatechange = process;//nhận reponse 
+        xhttp.send();//gửi dữ liệu lên sever
+      }
+      //-----------Kiểm tra response--------------------
+      function process(){
+        if(xhttp.readyState == 4 && xhttp.status == 200){
+          //------Updat data sử dụng javascript----------
+          ketqua = xhttp.responseText; 
+          document.getElementById("reponsetext").innerHTML=ketqua;       
+        }
+      }
+      //------------Kiểm tra trạng thái chân D1 D2------
+      function getstatusD1D2(){
+        xhttp.open("GET","getstatusD1D2",true);
+        xhttp.onreadystatechange = process_json;
+        xhttp.send();
+      }
+      //-----------Kiểm tra response-------------------------------
+      function process_json(){
+        if(xhttp.readyState == 4 && xhttp.status == 200){
+          //------Update data sử dụng javascript-------------------
+          var trangthaiD1D2_JSON = xhttp.responseText;
+          var Obj = JSON.parse(trangthaiD1D2_JSON);
+          document.getElementById("trangthaiD1").innerHTML = Obj.D1;
+          document.getElementById("trangthaiD2").innerHTML = Obj.D2;
+        }
+      }
+      //---Ham update duu lieu tu dong---
+      setInterval(function() {
+        getstatusD1D2();
+      }, 1000);
+    </script>
+ </body> 
+</html>

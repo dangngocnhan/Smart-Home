@@ -1,0 +1,5 @@
+Compiling C:\Users\DangNgocNhan\Desktop\Project3\03. Project3 test\main on 15-Dec-22 at 23:21
+>>> Warning 238 "C:\Program Files (x86)\PICC\Devices\def_877a.h" Line 284(2,5): Duplicate #locate
+      Memory usage:   ROM=23%      RAM=14% - 21%
+      0 Errors,  1 Warnings.
+Build Successful.

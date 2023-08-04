@@ -1,0 +1,8 @@
+Compiling C:\Users\DangNgocNhan\Desktop\Project3\zABC\LCD20X4\code\LCD20X4 on 19-Nov-22 at 18:37
+>>> Warning 238 "C:\Program Files (x86)\PICC\Devices\def_877a.h" Line 284(2,5): Duplicate #locate
+>>> Warning 202 "C:\Users\DangNgocNhan\Desktop\Project3\zABC\LCD20X4\code\LCD20X4.c" Line 62(15,21): Variable never used:   kqUart
+>>> Warning 202 "C:\Users\DangNgocNhan\Desktop\Project3\zABC\LCD20X4\code\LCD20X4.c" Line 68(5,17): Variable never used:   start_stop_b
+>>> Warning 202 "C:\Users\DangNgocNhan\Desktop\Project3\zABC\LCD20X4\code\LCD20X4.c" Line 69(6,15): Variable never used:   baodong_b
+      Memory usage:   ROM=14%      RAM=14% - 20%
+      0 Errors,  4 Warnings.
+Build Successful.

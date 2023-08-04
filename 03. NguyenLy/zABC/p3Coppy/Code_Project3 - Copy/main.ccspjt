@@ -1,0 +1,89 @@
+[PROJECT]
+Target=main.hex
+Processor_Text=PIC16F877A
+CCSVerions=5.101
+Compiler=PCM
+CCSVersion=5.101
+[Target Data]
+FileList=main.c
+[Directories]
+Include=
+[C:\Users\DangNgocNhan\Desktop\P3\Code\main]
+Type=4
+[mru-list]
+1=main.c
+
+[fileformats]
+forcecoff=0
+
+[ProjectLog]
+Days=2
+D1=30-10-2022
+D1_L=34
+D1_L1=[43132]Project Opened.
+D1_L2=[43144]Started Editing.
+D1_L3=[43478]Stopped Editing.
+TotalEdit=44
+TotalDebug=0
+D1_E=44
+D1_D=0
+D1_L4=[43767]Project Closed.
+D1_L5=[71305]Project Opened.
+D1_L6=[71419]Started Editing.
+D1_L7=[71904]Stopped Editing.
+D1_L8=[72172]Started Editing.
+D1_L9=[72472]Stopped Editing.
+D1_L10=[73195]Started Editing.
+D1_L11=[73944]Stopped Editing.
+D1_L12=[74441]Started Editing.
+D1_L13=[75028]Stopped Editing.
+D1_L14=[75769]Started Editing.
+D1_L15=[76272]Stopped Editing.
+D1_L16=[76485]Started Editing.
+D1_L17=[76507]Stopped Editing.
+D1_L18=[76800]Started Editing.
+D1_L19=[76851]Project Closed.
+D1_L20=[76890]Project Opened.
+D1_L21=[76948]Started Editing.
+D1_L22=[77817]Stopped Editing.
+D1_L23=[78027]Started Editing.
+D1_L24=[78468]Stopped Editing.
+D1_L25=[79885]Started Editing.
+D1_L26=[80411]Stopped Editing.
+D1_L27=[81739]Started Editing.
+D1_L28=[82039]Stopped Editing.
+D1_L29=[82828]Started Editing.
+D1_L30=[82896]Stopped Editing.
+D1_L31=[82896]Project Closed.
+D1_L32=[84828]Project Opened.
+D1_L33=[84846]Started Editing.
+D1_L34=[85618]Stopped Editing.
+D2=31-10-2022
+D2_L=2
+D2_L1=[1203]Started Editing.
+D2_L2=[1224]Project Closed.
+
+[Opened Files]
+1=main.c
+t1=40
+Count=5
+2=main.h
+t2=1
+3=..\..\Vi_Dieu_Khien\Bai6_ADC\DHT11_PIC16f877a\code\DHT11_HienThi_LCD.c
+t3=1
+4=DHT11.c
+t4=1
+5=i2c_Flex_LCD.c
+t5=111
+6=i2c_Flex_LCD.c
+t6=147
+7=..\..\..\..\..\Program Files (x86)\PICC\Devices\def_877a.h
+t7=225
+[main.c]
+Type=4
+
+[defines]
+buildcount=26
+[Units]
+Count=1
+1=main (main)

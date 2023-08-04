@@ -1,0 +1,11 @@
+Compiling C:\Users\DangNgocNhan\Desktop\Project3\Code_Project3\main on 14-Nov-22 at 16:41
+>>> Warning 238 "C:\Program Files (x86)\PICC\Devices\def_877a.h" Line 284(2,5): Duplicate #locate
+>>> Warning 202 "C:\Users\DangNgocNhan\Desktop\Project3\Code_Project3\i2c_Flex_LCD.c" Line 174(13,17): Variable never used:   data
+>>> Warning 202 "C:\Users\DangNgocNhan\Desktop\Project3\Code_Project3\main.c" Line 9(15,21): Variable never used:   kqUart
+>>> Warning 202 "C:\Users\DangNgocNhan\Desktop\Project3\Code_Project3\main.c" Line 10(27,39): Variable never used:   dh_nhiet_do2
+>>> Warning 202 "C:\Users\DangNgocNhan\Desktop\Project3\Code_Project3\main.c" Line 10(40,48): Variable never used:   dh_do_am
+>>> Warning 202 "C:\Users\DangNgocNhan\Desktop\Project3\Code_Project3\main.c" Line 10(49,58): Variable never used:   dh_do_am2
+>>> Warning 202 "C:\Users\DangNgocNhan\Desktop\Project3\Code_Project3\main.c" Line 11(15,18): Variable never used:   str
+      Memory usage:   ROM=3%      RAM=13% - 16%
+      0 Errors,  7 Warnings.
+Build Successful.

@@ -1,0 +1,5 @@
+Compiling C:\Users\DangNgocNhan\Desktop\P3\ZABC\DHT11 - LCD_I2C\code\DHT11_HienThi_LCD_I2C on 10-Nov-22 at 22:14
+>>> Warning 202 "C:\Users\DangNgocNhan\Desktop\P3\ZABC\DHT11 - LCD_I2C\code\i2c_Flex_LCD.c" Line 174(13,17): Variable never used:   data
+      Memory usage:   ROM=13%      RAM=11% - 16%
+      0 Errors,  1 Warnings.
+Build Successful.

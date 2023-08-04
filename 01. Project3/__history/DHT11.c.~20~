@@ -1,0 +1,137 @@
+#define _DHT11_H_
+//!#include <def_877a.h>
+#use delay(crystal=20M)
+
+#BIT DHT_DATA_OUT = 0x05.0
+#BIT DHT_DATA_IN = 0x05.0 
+#BIT DHT_DDR_DATA = 0x85.0
+
+#define DHT_ER 0
+#define DHT_OK 1
+
+#define DDROUT 0
+#define DDRIN 1
+
+//!unsigned int8 DHT_GetTemHumi (unsigned int8 &tem1, , &tem2, unsigned int8 &humil, &humi2);
+//!
+//!unsigned int8 DHT_GetTemHumi (unsigned int8 &tem1,&tem2, unsigned int8 &humi1, &humi2)
+//!{ 
+//!   unsigned int8 buffer[5]={0,0,0,0,0};
+//!   unsigned int8 ii,i,checksum;
+//!   DHT_DDR_DATA=DDROUT;    // set la cong ra
+//!   DHT_DATA_OUT=1;
+//!   delay_us(60);
+//!   DHT_DATA_OUT=0;
+//!   delay_ms(25); // it nhat 18ms
+//!   DHT_DATA_OUT=1;
+//!   DHT_DDR_DATA=DDRIN;//set la cong vao
+//!   
+//!   delay_us(60);
+//!   if(DHT_DATA_IN) return DHT_ER;
+//!   else while(!(DHT_DATA_IN)); //Doi DaTa len 1
+//!   delay_us(60);//cho 60us
+//!   if(!DHT_DATA_IN) return DHT_ER;
+//!   else while((DHT_DATA_IN)); //Doi Data ve 0
+//!    //Bat dau doc du lieu
+//!    for(i=0;i<5;i++) 
+//!    {
+//!      for(ii=0;ii<8;ii++) 
+//!      {
+//!         while((!DHT_DATA_IN));              // Doi Data len 1
+//!         delay_us(50);
+//!         if(DHT_DATA_IN)
+//!         {
+//!            buffer[i]|=(1<<(7-ii));
+//!            while((DHT_DATA_IN));
+//!         }
+//!      }
+//!    }
+//!   checksum=buffer[0]+buffer[1]+buffer[2]+buffer[3]; 
+//!   if((checksum) !=buffer[4])return DHT_ER; 
+//!   tem1 = buffer[2];//gia tri phan nguyen 
+//!   tem2 = buffer[3];//gia tri phan thap phan
+//!   humi1 = buffer[0];//gia tri phan nguyen 
+//!   humi2 = buffer[1];//gia tri phan thap phan
+//!   return DHT_OK;
+//!}
+
+
+
+#include <def_877a.h>
+#bit ra0 =0x05.0
+#bit TRISA0 =0x85.0
+#device *=16 adc=8
+#define  Data_Pin       Pin_D4                      // ket noi voi chan RD0
+#define  Data_Pin_TRIS  SET_TRIS_D                // dieu khien chan data la output hay input 
+
+int8 Data_DHT11[5];
+
+int1 DHT11_Start(){    // start
+   Data_Pin_TRIS(0);   // MCU output
+   Output_low(Data_Pin);        // MCU keo chan data xuong muc thap >18 ms
+   delay_ms(25);
+   Output_high(Data_Pin);        // MCU keo chan data len muc cao 
+   Data_Pin_TRIS(0xff);   // MCU input doi tin hieu tra ve cua DHT11 khoang 20 - 40 us
+   delay_us(40);
+   if(input(Data_Pin) == 0){    //DHT11 keo chan data xuong thap 80 us sau do keo len cao 80 us --> xac nhan ket noi
+      delay_us(80);
+      if(input(Data_Pin) == 1){
+         delay_us(80);
+         return 1;         // xac nhan ket noi thanh cong
+      }
+   }
+}
+ 
+
+int1 ReadData_DHT11(){       // doc data cua DHT11 tra ve
+    for(int i = 0; i < 5; i++){        // data: 5 byte
+      for(int j = 0; j < 8; j++){      // 1 byte 8 bit   tong 40 bit
+         // data
+         while(input(Data_Pin) == 0){};      // chay het 50us muc thap
+         delay_us(30);              //  hon 26-28us van la muc cao --> DHT11 chuyen di muc 1
+         if(input(Data_Pin) == 1){  
+               Data_DHT11[i] = Data_DHT11[i]<<1 | 1;
+               while(input(Data_Pin) == 1){} // chay het 70us muc cao
+         }
+         else{                   // tra ve bit 0
+            Data_DHT11[i] = Data_DHT11[i]<<1 | 0;
+         }
+      }   
+    }
+    // ------- kiem tra byte 5 = sum(byte 1 + 2 + 3 + 4) --> chuyen data thanh cong. nguoc lai 
+    if(Data_DHT11[4] == (Data_DHT11[0] + Data_DHT11[1] + Data_DHT11[2] + Data_DHT11[3])){
+      return 1;
+    }
+}
+
+
+
+
+void HienThi_Data_DHT11(){
+    //------------------in ket qua-----------------------------------------------
+    //in nhiet do
+ 
+    
+    lcd_init(0x4E,16,2);
+    printf(lcd_putc, "Nhiet do = "); 
+    for(int i = 13; i > 11; i--){
+       lcd_gotoxy(i,1);       //hien thi hang don vi truoc >hang chuc
+       printf(lcd_putc, "%d", Data_DHT11[2] % 10 + 48); 
+       Data_DHT11[2]=Data_DHT11[2] / 10;
+    }
+    //in do am
+    lcd_gotoxy(1,2);
+    printf(lcd_putc, "Do am = ");  
+    for(int i = 13; i > 11; i--){ 
+       lcd_gotoxy(i,2);   
+       printf(lcd_putc, "%d", Data_DHT11[0] % 10 + 48); //hien thi hang don vi truoc >hang chuc  //doi ra so thap phan +48 
+       Data_DHT11[0]=Data_DHT11[0] / 10;
+    }
+      //hien thi don vi nhiet do va do am 
+    LCD_Gotoxy(14,1);   
+    LCD_putc(223);
+    LCD_putc('C');
+    LCD_Gotoxy(14,2);   
+    LCD_putc('%');
+}
+//!

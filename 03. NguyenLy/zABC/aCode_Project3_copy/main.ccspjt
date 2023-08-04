@@ -1,0 +1,123 @@
+[PROJECT]
+Target=main.hex
+Processor_Text=PIC16F877A
+CCSVerions=5.101
+Compiler=PCM
+CCSVersion=5.101
+[Target Data]
+FileList=main.c
+[Directories]
+Include=
+[C:\Users\DangNgocNhan\Desktop\P3\Code\main]
+Type=4
+[mru-list]
+1=main.c
+
+[fileformats]
+forcecoff=0
+
+[ProjectLog]
+Days=5
+D1=30-10-2022
+D1_L=34
+D1_L1=[43132]Project Opened.
+D1_L2=[43144]Started Editing.
+D1_L3=[43478]Stopped Editing.
+TotalEdit=133
+TotalDebug=0
+D1_E=44
+D1_D=0
+D1_L4=[43767]Project Closed.
+D1_L5=[71305]Project Opened.
+D1_L6=[71419]Started Editing.
+D1_L7=[71904]Stopped Editing.
+D1_L8=[72172]Started Editing.
+D1_L9=[72472]Stopped Editing.
+D1_L10=[73195]Started Editing.
+D1_L11=[73944]Stopped Editing.
+D1_L12=[74441]Started Editing.
+D1_L13=[75028]Stopped Editing.
+D1_L14=[75769]Started Editing.
+D1_L15=[76272]Stopped Editing.
+D1_L16=[76485]Started Editing.
+D1_L17=[76507]Stopped Editing.
+D1_L18=[76800]Started Editing.
+D1_L19=[76851]Project Closed.
+D1_L20=[76890]Project Opened.
+D1_L21=[76948]Started Editing.
+D1_L22=[77817]Stopped Editing.
+D1_L23=[78027]Started Editing.
+D1_L24=[78468]Stopped Editing.
+D1_L25=[79885]Started Editing.
+D1_L26=[80411]Stopped Editing.
+D1_L27=[81739]Started Editing.
+D1_L28=[82039]Stopped Editing.
+D1_L29=[82828]Started Editing.
+D1_L30=[82896]Stopped Editing.
+D1_L31=[82896]Project Closed.
+D1_L32=[84828]Project Opened.
+D1_L33=[84846]Started Editing.
+D1_L34=[85618]Stopped Editing.
+D2=31-10-2022
+D2_L=2
+D2_L1=[1203]Started Editing.
+D2_L2=[1224]Project Closed.
+D3=12-11-2022
+D3_L=14
+D3_L1=[52132]Project Opened.
+D3_L2=[52978]Started Editing.
+D3_L3=[53258]Stopped Editing.
+D3_E=89
+D3_D=0
+D3_L4=[53258]Project Closed.
+D3_L5=[53457]Project Opened.
+D3_L6=[53575]Started Editing.
+D3_L7=[54739]Stopped Editing.
+D3_L8=[54761]Started Editing.
+D3_L9=[56881]Stopped Editing.
+D3_L10=[56984]Started Editing.
+D3_L11=[58927]Stopped Editing.
+D3_L12=[59419]Started Editing.
+D3_L13=[60415]Stopped Editing.
+D3_L14=[60637]Project Closed.
+D4=14-11-2022
+D4_L=11
+D4_L1=[52734]Project Opened.
+D4_L2=[52838]Started Editing.
+D4_L3=[53541]Stopped Editing.
+D4_L4=[53952]Started Editing.
+D4_L5=[55519]Stopped Editing.
+D4_L6=[57487]Started Editing.
+D4_L7=[57967]Stopped Editing.
+D4_L8=[59134]Started Editing.
+D4_L9=[59816]Project Closed.
+D4_L10=[60088]Project Opened.
+D4_L11=[60146]Project Closed.
+D5=15-11-2022
+D5_L=1
+D5_L1=[33953]Project Opened.
+
+[Opened Files]
+1=main.c
+t1=20
+Count=6
+2=main.h
+t2=17
+3=..\..\Vi_Dieu_Khien\Bai10. Truyen_Thong\UART_2Pic\code\uart.c
+t3=1
+4=..\..\Vi_Dieu_Khien\Bai10. Truyen_Thong\UART_2Pic\code_Nhan\uart_2.c
+t4=29
+5=uart\TestUartP3.c
+t5=1
+6=..\..\..\..\..\Program Files (x86)\PICC\Devices\def_877a.h
+t6=9
+7=..\..\..\..\..\Program Files (x86)\PICC\Devices\def_877a.h
+t7=225
+[main.c]
+Type=4
+
+[defines]
+buildcount=65
+[Units]
+Count=1
+1=main (main)

@@ -1,0 +1,5 @@
+ÀÄTestUartP3
+   ÃÄmain  0/50  Ram=1
+   ³  ÃÄ@cinit1  (Inline)  Ram=0
+   ³  ÀÄ@cinit2  (Inline)  Ram=0
+   ÀÄuart_  0/25  Ram=0

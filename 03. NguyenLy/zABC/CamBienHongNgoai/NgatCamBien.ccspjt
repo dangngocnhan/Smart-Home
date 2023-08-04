@@ -1,0 +1,50 @@
+[PROJECT]
+Target=NgatCamBien.hex
+Processor_Text=PIC16F877A
+CCSVersion=5.101
+Compiler=PCM
+[Target Data]
+FileList=NgatCamBien.c
+[NgatCamBien.c]
+Type=4
+[mru-list]
+1=NgatCamBien.c
+
+[defines]
+buildcount=38
+
+[fileformats]
+forcecoff=0
+
+[ProjectLog]
+Days=1
+D1=12-11-2022
+D1_L=12
+D1_L1=[31751]Started Editing.
+D1_L2=[34666]Stopped Editing.
+D1_L3=[35259]Started Editing.
+D1_L4=[36798]Stopped Editing.
+D1_L5=[36869]Started Editing.
+D1_L6=[38373]Stopped Editing.
+D1_L7=[51090]Started Editing.
+D1_L8=[51727]Stopped Editing.
+D1_L9=[51815]Started Editing.
+D1_L10=[52131]Stopped Editing.
+TotalEdit=96
+TotalDebug=0
+D1_E=96
+D1_D=0
+D1_L11=[52132]Project Closed.
+D1_L12=[52451]Project Opened.
+
+[Opened Files]
+1=NgatCamBien.c
+t1=1
+Count=1
+2=DHT11.c
+t2=101
+3=i2c_Flex_LCD.c
+t3=174
+[Units]
+Count=1
+1=NgatCamBien (main)

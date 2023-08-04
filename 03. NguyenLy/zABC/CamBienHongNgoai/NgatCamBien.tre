@@ -1,0 +1,60 @@
+ÀÄNgatCamBien
+   ÃÄMAIN  0/93  Ram=1
+   ³  ÃÄ@cinit1  (Inline)  Ram=0
+   ³  ÃÄ@cinit2  (Inline)  Ram=0
+   ³  ÃÄlcd_init  0/111  Ram=5
+   ³  ³  ÃÄ@delay_ms2  0/20  Ram=1
+   ³  ³  ÃÄ@I2C_WRITE_129  0/74  Ram=1
+   ³  ³  ÃÄi2c_send_nibble  0/80  Ram=3
+   ³  ³  ³  ÃÄ@I2C_WRITE_129  0/74  Ram=1
+   ³  ³  ³  ÃÄ@I2C_WRITE_129  0/74  Ram=1
+   ³  ³  ³  ÃÄ@I2C_WRITE_129  0/74  Ram=1
+   ³  ³  ³  ÃÄ@I2C_WRITE_129  0/74  Ram=1
+   ³  ³  ³  ÃÄ@I2C_WRITE_129  0/74  Ram=1
+   ³  ³  ³  ÀÄ@I2C_WRITE_129  0/74  Ram=1
+   ³  ³  ÃÄ@delay_ms2  0/20  Ram=1
+   ³  ³  ÃÄi2c_send_nibble  0/80  Ram=3
+   ³  ³  ³  ÀÄ*
+   ³  ³  ÃÄ@delay_ms2  0/20  Ram=1
+   ³  ³  ÃÄi2c_send_nibble  0/80  Ram=3
+   ³  ³  ³  ÀÄ*
+   ³  ³  ÃÄ@delay_ms2  0/20  Ram=1
+   ³  ³  ÃÄ@const983  0/8  Ram=0
+   ³  ³  ÃÄlcd_send_byte  0/67  Ram=3
+   ³  ³  ³  ÃÄ@I2C_WRITE_129  0/74  Ram=1
+   ³  ³  ³  ÃÄi2c_send_nibble  0/80  Ram=3
+   ³  ³  ³  ³  ÀÄ*
+   ³  ³  ³  ÀÄi2c_send_nibble  0/80  Ram=3
+   ³  ³  ³     ÀÄ*
+   ³  ³  ÃÄ@delay_ms2  0/20  Ram=1
+   ³  ³  ÀÄlcd_clear  0/10  Ram=0
+   ³  ³     ÃÄlcd_send_byte  0/67  Ram=3
+   ³  ³     ³  ÀÄ*
+   ³  ³     ÀÄ@delay_ms2  0/20  Ram=1
+   ³  ÃÄlcd_backlight_led  0/8  Ram=1
+   ³  ÃÄlcd_init  0/111  Ram=5
+   ³  ³  ÀÄ*
+   ³  ÃÄlcd_backlight_led  0/8  Ram=1
+   ³  ÃÄLCD_PUTC  0/37  Ram=1
+   ³  ³  ÃÄlcd_clear  0/10  Ram=0
+   ³  ³  ³  ÀÄ*
+   ³  ³  ÃÄlcd_gotoxy  0/55  Ram=7
+   ³  ³  ³  ÀÄlcd_send_byte  0/67  Ram=3
+   ³  ³  ³     ÀÄ*
+   ³  ³  ÃÄlcd_send_byte  0/67  Ram=3
+   ³  ³  ³  ÀÄ*
+   ³  ³  ÀÄlcd_send_byte  0/67  Ram=3
+   ³  ³     ÀÄ*
+   ³  ÃÄlcd_gotoxy  0/55  Ram=7
+   ³  ³  ÀÄ*
+   ³  ÃÄ@PSTRINGC7_993  0/88  Ram=4
+   ³  ³  ÃÄLCD_PUTC  0/37  Ram=1
+   ³  ³  ³  ÀÄ*
+   ³  ³  ÀÄLCD_PUTC  0/37  Ram=1
+   ³  ³     ÀÄ*
+   ³  ÃÄ@delay_ms2  0/20  Ram=1
+   ³  ÀÄLCD_PUTC  0/37  Ram=1
+   ³     ÀÄ*
+   ÃÄportb_interrupt  0/31  Ram=1
+   ÃÄNgat_int_ext  0/50  Ram=1
+   ÀÄNgat_Timer1  0/48  Ram=1

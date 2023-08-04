@@ -1,0 +1,11 @@
+Compiling C:\Users\DangNgocNhan\Desktop\P3\zABC\CamBienHongNgoai\NgatCamBien on 12-Nov-22 at 14:20
+>>> Warning 238 "C:\Program Files (x86)\PICC\Devices\def_877a.h" Line 284(2,5): Duplicate #locate
+>>> Warning 202 "C:\Users\DangNgocNhan\Desktop\P3\zABC\CamBienHongNgoai\i2c_Flex_LCD.c" Line 174(13,17): Variable never used:   data
+>>> Warning 202 "C:\Users\DangNgocNhan\Desktop\P3\zABC\CamBienHongNgoai\NgatCamBien.c" Line 18(15,26): Variable never used:   dh_nhiet_do
+>>> Warning 202 "C:\Users\DangNgocNhan\Desktop\P3\zABC\CamBienHongNgoai\NgatCamBien.c" Line 18(27,39): Variable never used:   dh_nhiet_do2
+>>> Warning 202 "C:\Users\DangNgocNhan\Desktop\P3\zABC\CamBienHongNgoai\NgatCamBien.c" Line 18(49,58): Variable never used:   dh_do_am2
+>>> Warning 202 "C:\Users\DangNgocNhan\Desktop\P3\zABC\CamBienHongNgoai\NgatCamBien.c" Line 19(15,18): Variable never used:   str
+>>> Warning 202 "C:\Users\DangNgocNhan\Desktop\P3\zABC\CamBienHongNgoai\NgatCamBien.c" Line 64(5,11): Variable never used:   timer1
+      Memory usage:   ROM=11%      RAM=14% - 19%
+      0 Errors,  7 Warnings.
+Build Successful.

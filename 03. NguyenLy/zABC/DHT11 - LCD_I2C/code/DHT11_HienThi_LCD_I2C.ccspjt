@@ -1,0 +1,24 @@
+[PROJECT]
+Target=DHT11_HienThi_LCD_I2C.hex
+Processor_Text=PIC16F877A
+CCSVersion=5.101
+Compiler=PCM
+[Target Data]
+FileList=DHT11_HienThi_LCD_I2C.c
+[DHT11_HienThi_LCD_I2C.c]
+Type=4
+[mru-list]
+1=DHT11_HienThi_LCD_I2C.c
+
+[defines]
+buildcount=3
+
+[Opened Files]
+1=DHT11_HienThi_LCD_I2C.c
+t1=21
+2=..\..\..\..\lcd i2c pic\PIC_1\PIC_1.c
+t2=1
+Count=2
+[Units]
+Count=1
+1=DHT11_HienThi_LCD_I2C (main)
